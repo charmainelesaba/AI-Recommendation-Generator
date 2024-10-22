@@ -1,0 +1,49 @@
+body{
+    font-family: "Open Sans", sans-serif;
+}
+header{
+    font-size: x-large;
+    text-align: center;
+}
+main{
+    background-color: #E6EAF4;
+    margin: 0 auto;
+    width: 60%;
+    height: 270px;
+}
+form{
+    padding: 30px;
+    border-bottom: 1px solid #D0D5DA;
+    display: flex;
+    justify-content: center;
+}
+ul{
+    font-size: 15px;
+    text-align: center;
+    list-style: none;
+}
+footer{
+    text-align: center;
+    font-size: smaller;
+}
+header, footer, .book-recommendation{
+    padding: 20px;
+}
+body, .user-input, .form-search{
+    background-color: #D0D5DA;
+}
+.welcome-text{
+    font-size: 13px;
+    padding: 10px;
+}
+.user-input{
+    width: 70%;
+    padding: 8px;
+    border-radius: 2px;
+    border: none;
+}
+.form-search{
+    border-radius: 15px;
+    padding: 8px;
+    margin-left: 20px;
+}
