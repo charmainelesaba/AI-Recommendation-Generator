@@ -47,4 +47,10 @@ body, .user-input, .form-search{
     border-radius: 15px;
     padding: 8px;
     margin-left: 20px;
+    border: none;
+    transition: ease-in-out 200ms all;
+}
+.form-search:hover{
+ background-color: #919fad;
+ cursor: pointer;
 }
