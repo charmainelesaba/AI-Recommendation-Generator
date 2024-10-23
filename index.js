@@ -21,14 +21,14 @@ function displayBookRecommendations(event) {
     books.forEach((book) => {
         typewriter
             .typeString(book + '<br>')  
-            .pauseFor(500)              
+            .pauseFor(350)              
             .callFunction(() => {
                 
                 let listItem = document.createElement('li');
                 listItem.textContent = book;
                 bookList.appendChild(listItem);
             })
-            .pauseFor(500)              
+            .pauseFor(350)              
             .start();
     });
 }
