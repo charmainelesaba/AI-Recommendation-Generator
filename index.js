@@ -12,8 +12,7 @@ function displayBooks(response){
 
     
     let books = [response.data.answer];
-    console.log(response.data);
-    
+
     books.forEach((book) => {
         typewriter
             .typeString(book + '<br>')  
@@ -46,6 +45,8 @@ function displayBookRecommendations(event) {
 
     axios.get(apiUrl).then(displayBooks);
     
+    let hiddenElement = document.querySelector("#book-recommendation");
+    hiddenElement.innerHTML = `<div class="blink">Generating book recommendations about ${aiRecommendation}</div>`;
     
 
 }
