@@ -20,8 +20,9 @@ form{
 }
 ul{
     font-size: 15px;
-    text-align: center;
+    text-align: left;
     list-style: none;
+    margin-top: 2px;
 }
 footer{
     text-align: center;
@@ -37,17 +38,18 @@ body, .user-input, .form-search{
     font-size: 13px;
     padding: 10px;
 }
+.user-input, .form-search{
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 15px;
+    border: none;
+}
 .user-input{
     width: 70%;
-    padding: 8px;
-    border-radius: 2px;
-    border: none;
 }
 .form-search{
     border-radius: 15px;
-    padding: 8px;
     margin-left: 20px;
-    border: none;
     transition: ease-in-out 200ms all;
 }
 .form-search:hover{

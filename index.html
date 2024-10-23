@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <title>Book recommendation generator</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
         <div class="welcome-text">
             Discover your next favorite book! Simply tell us what you're looking for, and our AI will recommend books tailored to your preferences.
         </div>
-        <form action="">
+        <form action="" id="form">
             <input type="text" 
             name="user-input" 
             id="user-input" 
@@ -31,11 +32,7 @@
             class="form-search">
         </form>
         <div id="book-recommendation" class="book-recommendation">
-            <ul>
-                <li>Game of Throne</li>
-                <li>Throne of glass</li>
-                <li>Twilight</li>
-            </ul>
+            <ul id="book-list"></ul>
         </div>
     </main>
     <footer>This AI project was coded by 
@@ -43,5 +40,6 @@
         <a href="https://github.com/charmainelesaba/AI-Recommendation-Generator">GitHub</a>, and it is hosted on 
         <a href="https://pulabooks.netlify.app/">Netlify</a>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>
