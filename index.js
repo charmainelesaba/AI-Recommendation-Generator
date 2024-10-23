@@ -1,12 +1,8 @@
-function displayBookRecommendations(event) {
-    event.preventDefault();
-    
+function displayBooks(response){
     let bookList = document.querySelector("#book-list");
     let bookRecommendationElement = document.querySelector("#book-recommendation");
     
 
-    bookList.innerHTML = "";
-    bookRecommendationElement.innerHTML = "";
 
     let typewriter = new Typewriter(bookRecommendationElement, {
         autoStart: true,
@@ -15,8 +11,8 @@ function displayBookRecommendations(event) {
     });
 
     
-    let books = ["Game of Thrones", "Throne of Glass", "Twilight"];
-
+    let books = [response.data.answer];
+    console.log(response.data);
     
     books.forEach((book) => {
         typewriter
@@ -24,13 +20,34 @@ function displayBookRecommendations(event) {
             .pauseFor(350)              
             .callFunction(() => {
                 
-                let listItem = document.createElement('li');
-                listItem.textContent = book;
-                bookList.appendChild(listItem);
+                if (bookList) {
+                    let listItem = document.createElement('li');
+                    listItem.textContent = book;
+                    bookList.appendChild(listItem);
+                } else {
+                    console.error("bookList element not found.");
+                }
             })
             .pauseFor(350)              
             .start();
     });
+}
+
+
+function displayBookRecommendations(event) {
+    event.preventDefault();
+
+    let seachInputElement = document.querySelector("#user-input");
+    let aiRecommendation = seachInputElement.value;
+    let key = "7f8c32d332f4bf01b7d20t129od1ca44";
+    let context = "You are a book recommendation expert. Your task is to generate 3 books in basic HTML based on the user's requested genre.. Make sure that wherever you're rendering the HTML, it's done without backticks so that the browser interprets it as HTML and not as plain text. Each title should be displayed in a consistent format: plain text, without any bolding or additional formatting. Ensure that the titles are presented as a simple list, each on a new line. Regardless of the genre or the number of times the user requests a recommendation, always adhere to this format without variation. If the book titles are initially returned in an inconsistent format, adjust them to match the specified format before providing the response. Your response should always be concise and focus solely on the book titles and author's name.";
+    let prompt = `user's requested genre: please generate 3 ${aiRecommendation} book recommendation, simply list the three books only`;
+    let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${key}`;
+
+    axios.get(apiUrl).then(displayBooks);
+    
+    
+
 }
 
 let formElement = document.querySelector("#form");
